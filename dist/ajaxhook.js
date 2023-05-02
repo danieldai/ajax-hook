@@ -89,7 +89,7 @@ exports.unHook = unHook;
  */
 
 // Save original XMLHttpRequest as _rxhr
-var realXhr = "__xhr";
+var realXhr = "___xhr";
 
 var events = exports.events = ['load', 'loadend', 'timeout', 'error', 'readystatechange', 'abort'];
 
@@ -237,7 +237,7 @@ var prototype = 'prototype';
 
 function proxy(proxy, win) {
   win = win || window;
-  if (win['__xhr']) throw "Ajax is already hooked.";
+  if (win['___xhr']) throw "Ajax is already hooked.";
   return proxyAjax(proxy, win);
 }
 
